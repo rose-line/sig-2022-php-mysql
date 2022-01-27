@@ -598,7 +598,7 @@ if (isset($_POST['submit'])) {
 
 ## Lire des données
 
-- On utilise de nouveau `msqli_connect()` pour se connecter, puis `mysqli_query()` pour exécuter une requête d'interrogation :
+- On utilise de nouveau `mysqli_connect()` pour se connecter, puis `mysqli_query()` pour exécuter une requête d'interrogation :
 
 ```php
 $res = mysqli_query($db, "SELECT * FROM table");
@@ -813,9 +813,9 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
   <?php
     $db = mysqli_connect('localhost', 'root', '', 'sig');
     $sql = "DELETE FROM utilisateurs WHERE id=$id";
-    msqli_query($db, $sql);
+    mysqli_query($db, $sql);
     echo '<p>Utilisateur supprimé !</p>';
-    msqli_close($db);
+    mysqli_close($db);
   ?>
 </body>
 </html>
